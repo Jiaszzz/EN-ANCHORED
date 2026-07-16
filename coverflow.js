@@ -29,12 +29,21 @@ const CoverFlow = (function () {
     cards = items.map((item, i) => {
       const card = document.createElement("div");
       card.className = "cf-card";
-      card.style.backgroundImage = `url(${item.cover})`;
+
+      const frame = document.createElement("div");
+      frame.className = "glass-frame";
+
+      const cover = document.createElement("div");
+      cover.className = "cover-img";
+      cover.style.backgroundImage = `url(${item.cover})`;
 
       // 圖片載入失敗時的友善畫面（用 CSS class 顯示錯誤樣式）
       const testImg = new Image();
-      testImg.onerror = () => card.classList.add("cf-card-error");
+      testImg.onerror = () => cover.classList.add("cf-card-error");
       testImg.src = item.cover;
+
+      frame.appendChild(cover);
+      card.appendChild(frame);
 
       card.addEventListener("click", (e) => {
         if (dragging) return; // 避免拖曳結束時誤觸點擊
