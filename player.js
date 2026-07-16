@@ -12,7 +12,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const els = {
     startOverlay: document.getElementById("startOverlay"),
-    startCover: document.getElementById("startCover"),
+    startCover: document.getElementById("startCoverImg"),
     track: document.getElementById("track"),
     songTitle: document.getElementById("songTitle"),
     songArtist: document.getElementById("songArtist"),
