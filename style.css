@@ -1,11 +1,12 @@
 :root {
-  --bg-deep: #1a0f2e;
-  --bg-mid: #3d2b6b;
-  --accent: #c9a8ff;
-  --text-main: #f5f0ff;
-  --text-dim: #b8a8d9;
-  --glass: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.18);
+  --bg-deep: #2e0808;
+  --bg-mid: #4a0f0f;
+  --stripe: rgba(0, 0, 0, 0.16);
+  --accent: #c9a86a;
+  --text-main: #f2e6c9;
+  --text-dim: #cbb488;
+  --glass: rgba(201, 168, 106, 0.10);
+  --glass-border: rgba(201, 168, 106, 0.35);
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -14,8 +15,15 @@ html, body {
   margin: 0;
   height: 100%;
   overflow: hidden;
-  background: var(--bg-deep);
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif;
+  background-color: var(--bg-deep);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--stripe) 0px,
+    var(--stripe) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+  font-family: "Noto Serif TC", "PingFang TC", -apple-system, BlinkMacSystemFont, serif;
   color: var(--text-main);
   user-select: none;
 }
@@ -26,7 +34,7 @@ html, body {
   inset: -5%;
   background-size: cover;
   background-position: center;
-  filter: blur(40px) brightness(0.45) saturate(1.2);
+  filter: blur(40px) brightness(0.35) saturate(1.1) sepia(0.25) hue-rotate(-15deg);
   transform: scale(1.15);
   transition: background-image 0.6s ease;
   z-index: 0;
@@ -35,7 +43,7 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(26,15,46,0.4), rgba(26,15,46,0.85));
+  background: linear-gradient(180deg, rgba(46,8,8,0.5), rgba(46,8,8,0.88));
 }
 
 .app {
@@ -51,7 +59,7 @@ html, body {
   text-align: center;
   padding: 8px 20px 4px;
   font-size: 13px;
-  letter-spacing: 3px;
+  letter-spacing: 6px;
   color: var(--text-dim);
 }
 
@@ -114,7 +122,14 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 40%, var(--bg-mid), var(--bg-deep) 75%);
+  background-color: var(--bg-deep);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--stripe) 0px,
+    var(--stripe) 2px,
+    transparent 2px,
+    transparent 14px
+  );
   text-align: center;
   padding: 20px;
   transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -131,8 +146,8 @@ html, body {
   margin-bottom: 26px;
   border: 1px solid var(--glass-border);
 }
-.start-text { font-size: 16px; letter-spacing: 1px; }
-.start-sub { font-size: 11px; color: var(--text-dim); margin-top: 8px; letter-spacing: 1px; }
+.start-text { font-size: 16px; letter-spacing: 4px; }
+.start-sub { font-size: 11px; color: var(--text-dim); margin-top: 8px; letter-spacing: 2px; }
 .pulse {
   width: 52px; height: 52px; border-radius: 50%; margin-top: 22px;
   border: 1.5px solid var(--accent);
@@ -146,7 +161,7 @@ html, body {
 
 /* ---------- 歌曲資訊 ---------- */
 .meta { text-align: center; padding: 20px 20px 4px; }
-.song-title { font-size: 19px; font-weight: 600; letter-spacing: 0.5px; }
+.song-title { font-size: 19px; font-weight: 600; letter-spacing: 3px; }
 .song-artist { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
 
 /* ---------- 進度條 ---------- */
@@ -181,7 +196,7 @@ html, body {
   display: flex; align-items: center; justify-content: center; font-size: 16px;
   backdrop-filter: blur(6px);
 }
-.play-btn { width: 62px; height: 62px; font-size: 20px; background: var(--accent); color: #241448; border: none; }
+.play-btn { width: 62px; height: 62px; font-size: 20px; background: var(--accent); color: #2e0808; border: none; }
 
 .dots { display: flex; justify-content: center; gap: 6px; padding: 12px 0 2px; }
 .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--glass-border); transition: 0.3s; }
