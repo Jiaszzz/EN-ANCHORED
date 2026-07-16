@@ -12,7 +12,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const els = {
     startOverlay: document.getElementById("startOverlay"),
-    startCover: document.getElementById("startCoverImg"),
     track: document.getElementById("track"),
     songTitle: document.getElementById("songTitle"),
     songArtist: document.getElementById("songArtist"),
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let seeking = false;
 
   buildDots(SONGS.length);
-  els.startCover.style.backgroundImage = `url(${SONGS[0].cover})`;
   setBackground(SONGS[0].cover);
 
   // ---------- 初始化 CoverFlow（畫面） ----------
