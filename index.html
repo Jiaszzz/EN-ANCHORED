@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a0f2e">
+<title>Wedding Album</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="background"></div>
+
+<!-- 開場覆蓋層：輕點畫面任一處 = 觸發第一次播放所需的使用者手勢 -->
+<div class="start-overlay" id="startOverlay">
+  <div class="start-cover" id="startCover"></div>
+  <div class="start-text">輕點畫面開始播放</div>
+  <div class="start-sub">TAP ANYWHERE TO START</div>
+  <div class="pulse"></div>
+</div>
+
+<div id="spinner"></div>
+<div id="errorMsg">音樂或圖片載入失敗，請檢查網路連線</div>
+
+<div class="app">
+  <div class="header">WEDDING ALBUM</div>
+
+  <div class="stage">
+    <div class="track" id="track"></div>
+  </div>
+
+  <div class="meta">
+    <div class="song-title" id="songTitle">—</div>
+    <div class="song-artist" id="songArtist">—</div>
+  </div>
+
+  <div class="time-row">
+    <span id="currentTime">00:00</span>
+    <span id="duration">00:00</span>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-fill" id="progressFill"></div>
+      <div class="progress-handle" id="progressHandle"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="ctrl-btn" id="prevBtn" aria-label="上一首">‹</button>
+    <button class="ctrl-btn play-btn" id="playPauseBtn" aria-label="播放/暫停">▶</button>
+    <button class="ctrl-btn" id="nextBtn" aria-label="下一首">›</button>
+  </div>
+
+  <div class="dots" id="dots"></div>
+  <div class="hint">左右滑動或點側邊封面切歌</div>
+</div>
+
+<!-- 依序載入：config 先給資料，接著是各功能模組，最後是總指揮 player.js -->
+<script src="config.js"></script>
+<script src="coverflow.js"></script>
+<script src="audio.js"></script>
+<script src="player.js"></script>
+</body>
+</html>
