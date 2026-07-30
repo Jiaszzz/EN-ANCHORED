@@ -60,11 +60,11 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px 4px;
+  padding: 14px 20px 6px;
 }
 .header-logo {
-  max-height: 34px;
-  max-width: 60%;
+  max-height: 72px;
+  max-width: 80%;
   object-fit: contain;
 }
 
