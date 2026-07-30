@@ -27,7 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
     spinner: document.getElementById("spinner"),
     errorMsg: document.getElementById("errorMsg"),
     dots: document.getElementById("dots"),
+    lyricsLineText: document.getElementById("lyricsLineText"),
   };
+
+  let currentLyrics = [];
+  let activeLyricsIndex = -1;
+  let rollTimeout = null;
 
   let started = false;
   let seeking = false;
@@ -57,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const pct = duration ? (current / duration) * 100 : 0;
       els.progressFill.style.width = pct + "%";
       els.progressHandle.style.left = pct + "%";
+      updateLyricsHighlight(current);
     },
     onStateChange: (isPlaying, isLoading, isError) => {
       els.playPauseBtn.textContent = isPlaying ? "❚❚" : "▶";
@@ -146,6 +152,40 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateNowPlaying(index) {
     els.songTitle.textContent = SONGS[index].title;
     els.songArtist.textContent = SONGS[index].artist;
+    loadLyricsForSong(index);
+  }
+
+  function loadLyricsForSong(index) {
+    const song = SONGS[index];
+    currentLyrics = Lyrics.parse(song.lyrics || "");
+    activeLyricsIndex = -1;
+    // 換歌時立刻清空、不做滾動動畫
+    if (rollTimeout) { clearTimeout(rollTimeout); rollTimeout = null; }
+    els.lyricsLineText.classList.remove("roll-out", "roll-in-prep");
+    els.lyricsLineText.textContent = "";
+  }
+
+  function updateLyricsHighlight(currentTime) {
+    if (currentLyrics.length === 0) return;
+    const idx = Lyrics.getActiveIndex(currentLyrics, currentTime);
+    if (idx === activeLyricsIndex || idx < 0) return;
+    activeLyricsIndex = idx;
+    rollToLine(currentLyrics[idx].text);
+  }
+
+  // 滾動式切換：目前這句往上滑出淡出，下一句從下方滑入
+  function rollToLine(text) {
+    const el = els.lyricsLineText;
+    if (rollTimeout) clearTimeout(rollTimeout);
+
+    el.classList.add("roll-out");
+    rollTimeout = setTimeout(() => {
+      el.textContent = text;
+      el.classList.remove("roll-out");
+      el.classList.add("roll-in-prep");
+      void el.offsetWidth; // 強制重排，讓下一行 class 變化能觸發 transition
+      el.classList.remove("roll-in-prep");
+    }, 380);
   }
 
   function setBackground(coverUrl) {
