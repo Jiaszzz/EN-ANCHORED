@@ -23,7 +23,7 @@ html, body {
     transparent 2px,
     transparent 14px
   );
-  font-family: "Noto Serif TC", "PingFang TC", -apple-system, BlinkMacSystemFont, serif;
+  font-family: "Yellowtail", "JasonHandwriting2", "Noto Serif TC", serif;
   color: var(--text-main);
   user-select: none;
 }
@@ -58,10 +58,10 @@ html, body {
 .header {
   text-align: center;
   padding: 8px 20px 4px;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 6px;
   color: var(--text-dim);
-  font-family: "Playfair Display", serif;
+  font-family: "Yellowtail", "JasonHandwriting2", cursive;
 }
 
 /* ---------- Cover Flow ---------- */
@@ -191,7 +191,7 @@ html, body {
 
 /* ---------- 歌曲資訊 ---------- */
 .meta { text-align: center; padding: 20px 20px 4px; }
-.song-title { font-size: 20px; font-weight: 700; letter-spacing: 2px; font-family: "Playfair Display", serif; }
+.song-title { font-size: 22px; font-weight: 400; letter-spacing: 1px; font-family: "Yellowtail", "JasonHandwriting2", cursive; }
 .song-artist { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
 
 /* ---------- 進度條 ---------- */
