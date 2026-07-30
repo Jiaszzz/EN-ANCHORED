@@ -7,7 +7,7 @@
    ============================================ */
 
 const SONGS = [
-  { title: "Song 1", artist: "Artist", cover: "covers/01.jpg", src: "songs/01.mp3" },
+  { title: "特別的人", artist: "方大同", cover: "covers/01.jpg", src: "songs/01.mp3" },
   { title: "Song 2", artist: "Artist", cover: "covers/02.jpg", src: "songs/02.mp3" },
   { title: "Song 3", artist: "Artist", cover: "covers/03.jpg", src: "songs/03.mp3" },
   { title: "Song 4", artist: "Artist", cover: "covers/04.jpg", src: "songs/04.mp3" },
