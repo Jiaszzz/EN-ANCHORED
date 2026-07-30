@@ -24,13 +24,18 @@
 <div class="app">
   <div class="header">WEDDING ALBUM</div>
 
+  <div class="meta-top">
+    <div class="song-title-sm" id="songTitle">—</div>
+    <div class="song-artist-sm" id="songArtist">—</div>
+  </div>
+
   <div class="stage">
     <div class="track" id="track"></div>
   </div>
 
-  <div class="meta">
-    <div class="song-title" id="songTitle">—</div>
-    <div class="song-artist" id="songArtist">—</div>
+  <!-- 滾動式單句歌詞：一次只顯示一句，唱到哪句就自動往上滾一句 -->
+  <div class="lyrics-line-display" id="lyricsLineDisplay">
+    <span class="lyrics-line-text" id="lyricsLineText"></span>
   </div>
 
   <div class="time-row">
@@ -58,6 +63,7 @@
 <script src="config.js"></script>
 <script src="coverflow.js"></script>
 <script src="audio.js"></script>
+<script src="lyrics.js"></script>
 <script src="player.js"></script>
 </body>
 </html>
