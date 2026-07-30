@@ -22,6 +22,7 @@ const ASSET_LIST = [
   "coverflow.js",
   "audio.js",
   "player.js",
+  "lyrics.js",
   "wedding-bg.jpg",
   "covers/01.jpg", "covers/02.jpg", "covers/03.jpg", "covers/04.jpg",
   "covers/05.jpg", "covers/06.jpg", "covers/07.jpg",
