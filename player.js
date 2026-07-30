@@ -208,12 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ---------- 離線快取（Service Worker） ----------
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").catch(() => {
-        // 註冊失敗不影響主要功能，安靜忽略即可
-      });
-    });
-  }
+  // ---------- 離線快取已停用 ----------
+  // 網站還在頻繁修改階段，離線快取容易造成「卡在舊版本」的困擾，
+  // 目前不再主動註冊。sw.js 保留一份「自我解除」版本，
+  // 讓先前已經裝上舊版離線快取的手機能自動清除、恢復正常。
 });
