@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     background: document.getElementById("background"),
     spinner: document.getElementById("spinner"),
     errorMsg: document.getElementById("errorMsg"),
-    dots: document.getElementById("dots"),
     lyricsLineText: document.getElementById("lyricsLineText"),
   };
 
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let started = false;
   let seeking = false;
 
-  buildDots(SONGS.length);
   setBackground(SONGS[0].cover);
 
   // ---------- 初始化 CoverFlow（畫面） ----------
@@ -49,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
       AudioPlayer.loadIndex(index, true);
       updateNowPlaying(index);
       setBackground(SONGS[index].cover);
-      updateDots(index);
     }
   });
 
@@ -65,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
       updateLyricsHighlight(current);
     },
     onStateChange: (isPlaying, isLoading, isError) => {
-      els.playPauseBtn.textContent = isPlaying ? "❚❚" : "▶";
+      els.playPauseBtn.querySelector(".icon-play").style.display = isPlaying ? "none" : "";
+      els.playPauseBtn.querySelector(".icon-pause").style.display = isPlaying ? "" : "none";
       els.spinner.classList.toggle("show", !!isLoading);
       els.errorMsg.classList.toggle("show", !!isError);
     },
@@ -105,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
       CoverFlow.goTo(idx, true);
       updateNowPlaying(idx);
       setBackground(SONGS[idx].cover);
-      updateDots(idx);
     }
   }, 400);
 
@@ -146,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
     CoverFlow.goTo(idx, true);
     updateNowPlaying(idx);
     setBackground(SONGS[idx].cover);
-    updateDots(idx);
   }
 
   function updateNowPlaying(index) {
@@ -190,22 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setBackground(coverUrl) {
     els.background.style.backgroundImage = `url(${coverUrl})`;
-  }
-
-  function buildDots(count) {
-    els.dots.innerHTML = "";
-    for (let i = 0; i < count; i++) {
-      const d = document.createElement("div");
-      d.className = "dot";
-      els.dots.appendChild(d);
-    }
-    updateDots(0);
-  }
-
-  function updateDots(activeIndex) {
-    [...els.dots.children].forEach((d, i) => {
-      d.classList.toggle("active", i === activeIndex);
-    });
   }
 
   // ---------- 離線快取已停用 ----------
