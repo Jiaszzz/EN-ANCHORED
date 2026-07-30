@@ -14,12 +14,12 @@
    ============================================ */
 
 const SONGS = [
-  { title: "Song 1", artist: "Artist", cover: "covers/01.jpg", src: "songs/01.mp3", lyrics: "" },
+  { title: "特別的人", artist: "方大同", cover: "covers/01.jpg", src: "songs/01.mp3", lyrics: "" },
   { title: "Song 2", artist: "Artist", cover: "covers/02.jpg", src: "songs/02.mp3", lyrics: "" },
   { title: "Song 3", artist: "Artist", cover: "covers/03.jpg", src: "songs/03.mp3", lyrics: "" },
-  { title: "Song 4", artist: "Artist", cover: "covers/04.jpg", src: "songs/04.mp3", lyrics: "" },
+  { title: "漫步人生路", artist: "鄧麗君", cover: "covers/04.jpg", src: "songs/04.mp3", lyrics: "" },
   { title: "Song 5", artist: "Artist", cover: "covers/05.jpg", src: "songs/05.mp3", lyrics: "" },
-  { title: "Song 6", artist: "Artist", cover: "covers/06.jpg", src: "songs/06.mp3", lyrics: "" },
+  { title: "給你們", artist: "張宇", cover: "covers/06.jpg", src: "songs/06.mp3", lyrics: "" },
   { title: "Song 7", artist: "Artist", cover: "covers/07.jpg", src: "songs/07.mp3", lyrics: "" },
 ];
 
