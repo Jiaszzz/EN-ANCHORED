@@ -16,11 +16,11 @@
 const SONGS = [
   { title: "特別的人", artist: "方大同", cover: "covers/01.jpg", src: "songs/01.mp3", lyrics: "" },
   { title: "Song 2", artist: "Artist", cover: "covers/02.jpg", src: "songs/02.mp3", lyrics: "" },
-  { title: "Song 3", artist: "Artist", cover: "covers/03.jpg", src: "songs/03.mp3", lyrics: "" },
+  { title: "祝福", artist: "辦桌二人組", cover: "covers/03.jpg", src: "songs/03.mp3", lyrics: "" },
   { title: "漫步人生路", artist: "鄧麗君", cover: "covers/04.jpg", src: "songs/04.mp3", lyrics: "" },
-  { title: "Song 5", artist: "Artist", cover: "covers/05.jpg", src: "songs/05.mp3", lyrics: "" },
+  { title: "要一起", artist: "周深", cover: "covers/05.jpg", src: "songs/05.mp3", lyrics: "" },
   { title: "給你們", artist: "張宇", cover: "covers/06.jpg", src: "songs/06.mp3", lyrics: "" },
-  { title: "Song 7", artist: "Artist", cover: "covers/07.jpg", src: "songs/07.mp3", lyrics: "" },
+  { title: "Until I Found You", artist: "Stephen Sanchez", cover: "covers/07.jpg", src: "songs/07.mp3", lyrics: "" },
 ];
 
 /* 專輯名稱，會顯示在鎖定畫面 / 通知列（Media Session）*/
