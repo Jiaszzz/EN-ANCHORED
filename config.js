@@ -15,7 +15,7 @@
 
 const SONGS = [
   { title: "特別的人", artist: "方大同", cover: "covers/01.jpg", src: "songs/01.mp3", lyrics: "" },
-  { title: "Song 2", artist: "Artist", cover: "covers/02.jpg", src: "songs/02.mp3", lyrics: "" },
+  { title: "你被寫在我的歌裡", artist: "蘇打綠", cover: "covers/02.jpg", src: "songs/02.mp3", lyrics: "" },
   { title: "祝福", artist: "辦桌二人組", cover: "covers/03.jpg", src: "songs/03.mp3", lyrics: "" },
   { title: "漫步人生路", artist: "鄧麗君", cover: "covers/04.jpg", src: "songs/04.mp3", lyrics: "" },
   { title: "要一起", artist: "周深", cover: "covers/05.jpg", src: "songs/05.mp3", lyrics: "" },
