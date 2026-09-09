@@ -308,22 +308,20 @@ html, body {
 }
 
    .float-img {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 56px;
-     opacity: 0.6;
-     filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
-     animation: floatAround 13s linear infinite;
-   }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  opacity: 0.6;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+  animation: floatAround 42s ease-in-out infinite;
+}
 
-   @keyframes floatAround {
-     0%   { transform: translate(10vw, 90vh) rotate(0deg); }
-     15%  { transform: translate(75vw, 65vh) rotate(60deg); }
-     30%  { transform: translate(25vw, 30vh) rotate(130deg); }
-     45%  { transform: translate(85vw, 10vh) rotate(190deg); }
-     60%  { transform: translate(50vw, 75vh) rotate(250deg); }
-     75%  { transform: translate(15vw, 15vh) rotate(300deg); }
-     90%  { transform: translate(70vw, 40vh) rotate(340deg); }
-     100% { transform: translate(10vw, 90vh) rotate(360deg); }
-   }
+@keyframes floatAround {
+  0%   { transform: translate(10vw, 85vh) rotate(0deg); }
+  20%  { transform: translate(70vw, 60vh) rotate(40deg); }
+  40%  { transform: translate(30vw, 25vh) rotate(90deg); }
+  60%  { transform: translate(80vw, 15vh) rotate(140deg); }
+  80%  { transform: translate(45vw, 70vh) rotate(190deg); }
+  100% { transform: translate(10vw, 85vh) rotate(240deg); }
+}
